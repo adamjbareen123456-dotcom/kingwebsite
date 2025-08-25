@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <title>تصميم King</title>
+  <style>
+    body {
+      font-family: system-ui;
+      background: white; /* البداية خلفية بيضاء */
+      color: black;
+      text-align: center;
+      padding-top: 100px;
+      transition: background 0.5s, color 0.5s;
+    }
+
+    h1 {
+      font-size: 4vw;
+      transition: 0.5s;
+    }
+
+    button {
+      margin: 10px;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: background 0.3s, color 0.3s;
+    }
+
+    button:hover {
+      opacity: 0.8;
+    }
+
+    /* ثيم غامق */
+    .dark {
+      background: black;
+      color: white;
+    }
+
+    .dark button {
+      background: #333;
+      color: white;
+    }
+
+    /* ثيم فاتح */
+    .light {
+      background: white;
+      color: black;
+    }
+
+    .light button {
+      background: #ddd;
+      color: black;
+    }
+  </style>
+</head>
+<body class="light">
+  <h1 id="title">تصميم King</h1>
+  <button onclick="changeStyle()">اضغط هنا</button>
+  <button onclick="toggleTheme()">تغيير الثيم</button>
+
+  <script>
+    function changeStyle() {
+      let title = document.getElementById("title");
+      title.style.fontSize = "6vw";
+      title.style.color = "#ffeb3b";
+      title.style.textTransform = "uppercase";
+      alert("king your uncle");
+    }
+
+    function toggleTheme() {
+      let body = document.body;
+      if (body.classList.contains("dark")) {
+        body.classList.remove("dark");
+        body.classList.add("light");
+      } else if (body.classList.contains("light")) {
+        body.classList.remove("light");
+        body.classList.add("dark");
+      } else {
+        body.classList.add("dark"); // البداية دايمًا غامق إذا ما كان محدد
+      }
+    }
+  </script>
+</body>
+</html>
